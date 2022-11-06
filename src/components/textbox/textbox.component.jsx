@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const TextBox = (props) => {
-    console.log(props)
+ 
     const [text, setText] = useState("enter text here");
     const onClickUpperHandler = () => {
         setText(text.toUpperCase())
@@ -26,7 +26,7 @@ const TextBox = (props) => {
     return (
         <div className={`mb-3 container mt-5 `}>
             <label htmlFor="exampleFormControlTextarea1" className="form-label fs-1" style={{color: props.mode==="light"?"black":"white"}}>{props.text}</label>
-            <textarea className="form-control" id="exampleFormControlTextarea1" rows="8"placeholder={text} onChange={onChangeHandler} ></textarea>
+            <textarea className="form-control" id="exampleFormControlTextarea1" rows="8" value={text} onChange={onChangeHandler} ></textarea>
             <button type="button" className="btn btn-info mt-3" onClick={onClickUpperHandler}>Convert to UpperCase</button>
             <button type="button" className="btn btn-info mt-3 mx-3" onClick={onClickLowerHandler}>Convert to LowerCase</button>
             <button type="button" className="btn btn-info mt-3" onClick={onClickClearHandler} >Clear Text</button>
